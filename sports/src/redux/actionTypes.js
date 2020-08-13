@@ -1,0 +1,2 @@
+export const ALL_SPORTS = "ALL_SPORTS";
+export const FETCHING_ALL_SPORTS = "FETCHING_ALL_SPORTS";
