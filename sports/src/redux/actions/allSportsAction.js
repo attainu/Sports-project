@@ -13,7 +13,7 @@ export const getAllSports = () => async (dispatch) => {
   try {
     dispatch(fetchingAllSports());
     const { data } = await axios.get(`${API_KEY}/all_sports.php`);
-    dispatch(allSports(data));
+    dispatch(allSports(data.sports));
   } catch (error) {
     alert(
       `There is some technical problem please inform at: lakshaysaini2013@gmail.com ${error}`
