@@ -80,10 +80,5 @@ class CountryList extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    countryData: state.allCountryState.allCountry,
-  };
-};
 
-export default connect(mapStateToProps, { setCountryName })(CountryList);
+export default connect(null, { setCountryName })(CountryList);

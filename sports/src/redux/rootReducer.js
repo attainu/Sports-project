@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
 import allSportsReducer from "./reducers/allSportsReducer";
 import userSelectionReducer from "./reducers/userSelectionReducer";
-import allCountryReducer from "./reducers/allCountryReducer";
+import allLeagReducer from "./reducers/allLeagueReducer";
 
 const rootReducer = combineReducers({
   allSportsState: allSportsReducer,
   userSelectionState: userSelectionReducer,
-  allCountryState: allCountryReducer,
+  allLeagueState: allLeagReducer,
 });
 
 export default rootReducer;

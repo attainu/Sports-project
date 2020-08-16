@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import "./Country.css";
 import CountryList from "../../components/CountryList/CountryList";
 import { setCountryName } from "../../redux/actions/userSelectionAction";
+import Logo from "../../components/Logo/Logo";
 class Country extends Component {
   componentDidMount() {
     this.props.setCountryName(null);
@@ -18,13 +19,15 @@ class Country extends Component {
   };
   render() {
     return !this.props.sportsName ? (
-      <div style={{ color: "#fff" }}>Select the sport first </div>
+      <>
+        <Logo />
+        <div style={{ color: "#fff" }}>Select the sport first </div>
+      </>
     ) : (
       <div className="CountryWapper">
+        <Logo />
         <div className="Country__title">
-          <p className="Country__title-h">
-            Welcome to Sports Nation. Great so you are intrested in
-          </p>
+          <p className="Country__title-h">Great so you are intrested in</p>
           <p className="Country__title-s">{this.props.sportsName}</p>
           <p className="Country__title-d">
             Well you are one step away to know more about the activities, for
