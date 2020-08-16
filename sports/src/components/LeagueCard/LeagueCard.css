@@ -13,7 +13,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   animation-name: fadeOut;
-  animation-duration: 4s;
+  animation-duration: 3s;
 }
 @keyframes fadeOut {
   0% {

@@ -15,7 +15,11 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/country" component={Country} />
           <Route exact path="/allLeague" component={AllLeague} />
-          <Route exact path="/singleLeague" component={SingleLeague} />
+          <Route
+            exact
+            path="/singleLeague/:leagueID"
+            component={SingleLeague}
+          />
           <Route exact path="/singleTeam" component={SingleTeam} />
           <Redirect to="/" />
         </Switch>

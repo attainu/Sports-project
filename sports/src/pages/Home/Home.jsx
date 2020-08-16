@@ -21,7 +21,6 @@ class Home extends Component {
     }
   };
   render() {
-    console.log(this.props.allSports);
     return !this.props.allSports ? (
       <>
         <Logo />

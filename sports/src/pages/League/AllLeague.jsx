@@ -39,7 +39,12 @@ class AllLeague extends Component {
 
         <div className="LeagueCard__Wapper">
           {this.props.allLeague.map((item) => (
-            <LeagueCard img={item.strBadge} title={item.strLeague} />
+            <LeagueCard
+              img={item.strBadge}
+              title={item.strLeague}
+              leagueID={item.idLeague}
+              key={item.idLeague}
+            />
           ))}
         </div>
       </>
