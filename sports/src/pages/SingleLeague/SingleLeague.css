@@ -32,6 +32,10 @@
   height: 350px;
   border-radius: 10px;
   border: 2px solid #fff;
+  transition: all 0.3s ease;
+}
+.SLeague__Desc .SLeague__Desc--poster div img:hover {
+  border: 2px solid #8a00d8;
 }
 .SLeague__Desc .SLeague__Desc--fd {
   width: 100%;
@@ -78,6 +82,9 @@
 
 .SLeague__Desc .SLeague__Desc--up {
   margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
 }
 
 .SLeague__Desc .SLeague__Desc--up .SLeague__Desc--upH {
@@ -93,6 +100,10 @@
 }
 .SLeague__Desc .SLeague__Desc--last {
   margin: 15px;
+  display: flex;
+  flex-direction: column;
+
+  align-items: self-start;
 }
 
 .SLeague__Desc .SLeague__Desc--last .SLeague__Desc--lastH {
@@ -120,4 +131,28 @@
   margin-bottom: 16px;
   font-weight: bold;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 550px) {
+  .SLeague__Desc .SLeague__Desc--fd .SL__D--iH {
+    flex-direction: column;
+    align-items: start;
+  }
+  .SLeague__Desc .SLeague__Desc--poster {
+    flex-flow: row wrap;
+  }
+
+  .SLeague__Desc .SLeague__Desc--poster div {
+    width: calc(100% - 30px);
+    margin: 15px;
+  }
+  .SLeague__Desc .SLeague__Desc--fd .SL__D--name {
+    font-size: 30px;
+  }
+  .SLeague__Desc .SLeague__Desc--up {
+    align-items: normal;
+  }
+  .SLeague__Desc .SLeague__Desc--last {
+    align-items: normal;
+  }
 }

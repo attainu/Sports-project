@@ -5,6 +5,7 @@ import Logo from "../../components/Logo/Logo";
 import Default from "../../assets/img/default.jpg";
 import "./SingleLeague.css";
 import TeamCard from "../../components/TeamCard/TeamCard";
+import EventList from "../../components/EventList/EventList";
 class SingleLeague extends Component {
   componentDidMount() {
     this.props.getSingleLeague(this.props.match.params.leagueID);
@@ -87,11 +88,45 @@ class SingleLeague extends Component {
 
           <div className="SLeague__Desc--up">
             <p className="SLeague__Desc--upH"> Upcoming Events</p>
-            {!this.props.upcomingEvent ? <p>No Events</p> : <p>Loading</p>}
+            {!this.props.upcomingEvent ? (
+              <p>No Events</p>
+            ) : (
+              <div>
+                {this.props.upcomingEvent.map((item) => (
+                  <EventList
+                    key={item.idEvent}
+                    homeTeamId={item.idHomeTeam}
+                    awayTeamId={item.idAwayTeam}
+                    eventData={item.dateEvent}
+                    homeTeam={item.strHomeTeam}
+                    awayTeam={item.strAwayTeam}
+                    homeScore={item.intHomeScore}
+                    awayScore={item.intAwayScore}
+                  />
+                ))}
+              </div>
+            )}
           </div>
           <div className="SLeague__Desc--last">
             <p className="SLeague__Desc--lastH"> Last Events</p>
-            {!this.props.upcomingEvent ? <p>No Events</p> : <p>Loading</p>}
+            {!this.props.lastEvent ? (
+              <p>No Events</p>
+            ) : (
+              <div>
+                {this.props.lastEvent.map((item) => (
+                  <EventList
+                    key={item.idEvent}
+                    homeTeamId={item.idHomeTeam}
+                    awayTeamId={item.idAwayTeam}
+                    eventData={item.dateEvent}
+                    homeTeam={item.strHomeTeam}
+                    awayTeam={item.strAwayTeam}
+                    homeScore={item.intHomeScore}
+                    awayScore={item.intAwayScore}
+                  />
+                ))}
+              </div>
+            )}
           </div>
           <div className="SLeague__Desc--teams">
             <p className="SLeague__Desc--teamsH"> Teams</p>
@@ -114,8 +149,6 @@ class SingleLeague extends Component {
             </div>
           </div>
         </div>
-
-        <div>This is SingleLeague page {this.props.match.params.leagueID}</div>
       </>
     );
   }
@@ -126,6 +159,7 @@ const mapStateToProps = (state) => {
     fetchingLeague: state.singleLeagueState.fetchingSingleLeague,
     singleLeague: state.singleLeagueState.singleLeague,
     upcomingEvent: state.singleLeagueState.singleLeagueUpcomingEvent,
+    lastEvent: state.singleLeagueState.singleLeagueLastEvent,
     teams: state.singleLeagueState.singleLeagueTeam,
   };
 };

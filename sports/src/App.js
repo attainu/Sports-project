@@ -20,7 +20,7 @@ class App extends Component {
             path="/singleLeague/:leagueID"
             component={SingleLeague}
           />
-          <Route exact path="/singleTeam" component={SingleTeam} />
+          <Route exact path="/singleTeam/:teamID" component={SingleTeam} />
           <Redirect to="/" />
         </Switch>
       </>
