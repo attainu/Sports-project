@@ -1,23 +1,66 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getSingleLeague } from "../../redux/actions/singleLeagueAction";
+import {
+  getSingleLeague,
+  setSingleLeague,
+  setSingleLeagueTeam,
+  setSingleLeagueLastEvent,
+  setSingleLeagueUpcomingEvent,
+} from "../../redux/actions/singleLeagueAction";
 import Logo from "../../components/Logo/Logo";
-import Default from "../../assets/img/default.jpg";
 import "./SingleLeague.css";
 import TeamCard from "../../components/TeamCard/TeamCard";
-import EventList from "../../components/EventList/EventList";
-import { Link } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
+import LTHeader from "../../components/LTHeader/LTHeader";
+import LTPoster from "../../components/LTPoster/LTPoster";
+import LTDesc from "../../components/LTDesc/LTDesc";
+import LTEvent from "../../components/LTEvent/LTEvent";
+import NoData from "../../assets/img/voidData.svg";
+import { Link } from "react-router-dom";
+
 class SingleLeague extends Component {
   componentDidMount() {
     this.props.getSingleLeague(this.props.match.params.leagueID);
+  }
+  componentWillUnmount() {
+    this.props.setSingleLeague("");
+    this.props.setSingleLeagueTeam("");
+    this.props.setSingleLeagueLastEvent("");
+    this.props.setSingleLeagueUpcomingEvent("");
   }
   render() {
     return this.props.singleLeague === null ? (
       <>
         <Logo />
-        <div>
-          Guys Please dont play with id either enter correct id or go to home
+        <div
+          style={{
+            color: "#fff",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "calc(100vh - 80px)",
+            flexDirection: "column",
+          }}
+        >
+          Happy to see your intrest about sports, but we apologize you we don't
+          have the data of this league, either go back or
+          <Link
+            to="/"
+            style={{
+              background: "#fff",
+              padding: "5px 10px",
+              margin: "10px",
+              borderRadius: "5px",
+              cursor: "pointer",
+            }}
+          >
+            GO TO HOME
+          </Link>
+          <img
+            src={NoData}
+            style={{ width: "250px", paddingTop: "40px" }}
+            alt=""
+          />
         </div>
       </>
     ) : this.props.fetchingSingleLeague === true ||
@@ -28,66 +71,13 @@ class SingleLeague extends Component {
       </>
     ) : (
       <>
-        <div
-          className="SLeague__head"
-          style={{
-            backgroundImage: `url(${
-              this.props.singleLeague[0].strBanner || Default
-            })`,
-          }}
-        >
-          <Logo />
-          <div className="SocialIcon">
-            {this.props.singleLeague[0].strFacebook !== "" ? (
-              <a
-                href={`http://${this.props.singleLeague[0].strFacebook}`}
-                target="_blank"
-              >
-                <img
-                  src="https://www.thesportsdb.com/images/icons/facebook_128.png"
-                  alt=""
-                  className="SocialIcon__btn"
-                />
-              </a>
-            ) : null}
-            {this.props.singleLeague[0].strTwitter !== "" ? (
-              <a
-                href={`https://${this.props.singleLeague[0].strTwitter}`}
-                target="_blank"
-              >
-                <img
-                  src="https://www.thesportsdb.com/images/icons/twitter_128.png"
-                  alt=""
-                  className="SocialIcon__btn"
-                />
-              </a>
-            ) : null}
-            {this.props.singleLeague[0].strWebsite !== "" ? (
-              <a
-                href={`http://${this.props.singleLeague[0].strWebsite}`}
-                target="_blank"
-              >
-                <img
-                  src="https://www.thesportsdb.com/images/icons/webpage_128.png"
-                  alt=""
-                  className="SocialIcon__btn"
-                />
-              </a>
-            ) : null}
-            {this.props.singleLeague[0].strYoutube !== "" ? (
-              <a
-                href={`https://${this.props.singleLeague[0].strYoutube}`}
-                target="_blank"
-              >
-                <img
-                  src="https://www.thesportsdb.com/images/icons/youtube_128.png"
-                  alt=""
-                  className="SocialIcon__btn"
-                />
-              </a>
-            ) : null}
-          </div>
-        </div>
+        <LTHeader
+          banner={this.props.singleLeague[0].strBanner}
+          fb={this.props.singleLeague[0].strFacebook}
+          tw={this.props.singleLeague[0].strTwitter}
+          web={this.props.singleLeague[0].strWebsite}
+          yt={this.props.singleLeague[0].strYoutube}
+        />
         <div className="SLeague__Desc">
           <div className="SLeague__Desc--fd">
             <div className="SL__D--name">
@@ -108,78 +98,24 @@ class SingleLeague extends Component {
               </p>
             </div>
           </div>
-          <div className="SLeague__Desc--poster">
-            <div className="poster">
-              <p>Poster:</p>
-              <img
-                src={this.props.singleLeague[0].strPoster || Default}
-                alt=""
-              />
-            </div>
-            <div className="badge">
-              <p>Badge:</p>
-              <img
-                src={this.props.singleLeague[0].strBadge || Default}
-                alt=""
-              />
-            </div>
-            <div className="trophy">
-              <p>Trophy:</p>
-              <img
-                src={this.props.singleLeague[0].strTrophy || Default}
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="SLeague__Desc--full">
-            <p className="SLeague__Desc--fullH"> Description</p>
-            <p className="SLeague__Desc--fullD">
-              {this.props.singleLeague[0].strDescriptionEN}
-            </p>
-          </div>
+          <LTPoster
+            firstHead="Poster"
+            poster={this.props.singleLeague[0].strPoster}
+            badge={this.props.singleLeague[0].strBadge}
+            thirdHead="Trophy"
+            trophy={this.props.singleLeague[0].strTrophy}
+          />
+          <LTDesc
+            description={
+              this.props.singleLeague[0].strDescriptionEN || "DESCRIPTION NA"
+            }
+          />
 
-          <div className="SLeague__Desc--up">
-            <p className="SLeague__Desc--upH"> Upcoming Events</p>
-            {!this.props.upcomingEvent ? (
-              <p>No Events</p>
-            ) : (
-              <div>
-                {this.props.upcomingEvent.map((item) => (
-                  <EventList
-                    key={item.idEvent}
-                    homeTeamId={item.idHomeTeam}
-                    awayTeamId={item.idAwayTeam}
-                    eventData={item.dateEvent}
-                    homeTeam={item.strHomeTeam}
-                    awayTeam={item.strAwayTeam}
-                    homeScore={item.intHomeScore}
-                    awayScore={item.intAwayScore}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
-          <div className="SLeague__Desc--last">
-            <p className="SLeague__Desc--lastH"> Last Events</p>
-            {!this.props.lastEvent ? (
-              <p>No Events</p>
-            ) : (
-              <div>
-                {this.props.lastEvent.map((item) => (
-                  <EventList
-                    key={item.idEvent}
-                    homeTeamId={item.idHomeTeam}
-                    awayTeamId={item.idAwayTeam}
-                    eventData={item.dateEvent}
-                    homeTeam={item.strHomeTeam}
-                    awayTeam={item.strAwayTeam}
-                    homeScore={item.intHomeScore}
-                    awayScore={item.intAwayScore}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
+          <LTEvent
+            event={this.props.upcomingEvent}
+            eventType="Upcoming Event"
+          />
+          <LTEvent event={this.props.lastEvent} eventType="LAST Event" />
           <div className="SLeague__Desc--teams">
             <p className="SLeague__Desc--teamsH"> Teams</p>
             <div
@@ -216,4 +152,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getSingleLeague })(SingleLeague);
+export default connect(mapStateToProps, {
+  getSingleLeague,
+  setSingleLeague,
+  setSingleLeagueTeam,
+  setSingleLeagueLastEvent,
+  setSingleLeagueUpcomingEvent,
+})(SingleLeague);

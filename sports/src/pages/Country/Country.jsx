@@ -4,13 +4,17 @@ import "./Country.css";
 import CountryList from "../../components/CountryList/CountryList";
 import { setCountryName } from "../../redux/actions/userSelectionAction";
 import Logo from "../../components/Logo/Logo";
+import Error from "../../assets/img/countryError.svg";
+import { Link } from "react-router-dom";
 class Country extends Component {
   componentDidMount() {
     this.props.setCountryName(null);
   }
   handelClick = () => {
     if (this.props.countryName !== null) {
-      this.props.history.push("/allLeague");
+      this.props.history.push(
+        `/allLeague/${this.props.sportsName}/${this.props.countryName}`
+      );
     } else {
       alert(
         "Hye, we respect your excitement but to see result you have to select one country "
@@ -21,7 +25,39 @@ class Country extends Component {
     return !this.props.sportsName ? (
       <>
         <Logo />
-        <div style={{ color: "#fff" }}>Select the sport first </div>
+        <div
+          style={{
+            color: "#fff",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "calc(100vh - 80px)",
+            flexDirection: "column",
+            textAlign: "center",
+          }}
+        >
+          <p>
+            Sorry you can't access this page directly.
+            <Link
+              to="/"
+              style={{
+                background: "#fff",
+                padding: "5px 10px",
+                margin: "10px",
+                borderRadius: "5px",
+                cursor: "pointer",
+                lineHeight: "3",
+              }}
+            >
+              GO TO HOME
+            </Link>
+          </p>
+          <img
+            src={Error}
+            style={{ width: "250px", paddingTop: "40px" }}
+            alt=""
+          />
+        </div>
       </>
     ) : (
       <div className="CountryWapper">

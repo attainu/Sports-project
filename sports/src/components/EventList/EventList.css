@@ -55,5 +55,7 @@
 @media screen and (max-width: 550px) {
   .Event {
     font-size: 10px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./EventList.css";
 
 const EventList = ({
@@ -18,7 +17,7 @@ const EventList = ({
       </div>
       <div className="Event__team">
         <div className="Event__team--home">
-          <Link to={`/singleTeam/${homeTeamId}`}> {homeTeam}</Link>
+          <a href={`/singleTeam/${homeTeamId}`}> {homeTeam}</a>
         </div>
         <div className="Event__team--score">
           <p>{homeScore}</p>
@@ -26,7 +25,7 @@ const EventList = ({
           <p>{awayScore}</p>
         </div>
         <div className="Event__team--away">
-          <Link to={`/singleTeam/${awayTeamId}`}> {awayTeam}</Link>
+          <a href={`/singleTeam/${awayTeamId}`}> {awayTeam}</a>
         </div>
       </div>
     </div>
