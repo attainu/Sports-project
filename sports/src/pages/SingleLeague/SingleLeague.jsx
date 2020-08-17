@@ -7,6 +7,7 @@ import "./SingleLeague.css";
 import TeamCard from "../../components/TeamCard/TeamCard";
 import EventList from "../../components/EventList/EventList";
 import { Link } from "react-router-dom";
+import Loader from "../../components/Loader/Loader";
 class SingleLeague extends Component {
   componentDidMount() {
     this.props.getSingleLeague(this.props.match.params.leagueID);
@@ -23,7 +24,7 @@ class SingleLeague extends Component {
       this.props.singleLeague === "" ? (
       <>
         <Logo />
-        <div>Loading</div>
+        <Loader />
       </>
     ) : (
       <>

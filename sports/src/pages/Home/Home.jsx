@@ -8,6 +8,7 @@ import {
   setCountryName,
 } from "../../redux/actions/userSelectionAction";
 import Logo from "../../components/Logo/Logo";
+import Loader from "../../components/Loader/Loader";
 class Home extends Component {
   componentDidMount() {
     this.props.getAllSports();
@@ -24,7 +25,7 @@ class Home extends Component {
     return !this.props.allSports ? (
       <>
         <Logo />
-        <div>Loading</div>
+        <Loader />
       </>
     ) : (
       <>

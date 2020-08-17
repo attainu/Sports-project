@@ -7,6 +7,7 @@ import {
 import LeagueCard from "../../components/LeagueCard/LeagueCard";
 import "./AllLeague.css";
 import Logo from "../../components/Logo/Logo";
+import Loader from "../../components/Loader/Loader";
 class AllLeague extends Component {
   componentDidMount() {
     if (this.props.sportName !== null && this.props.countryName !== null) {
@@ -20,7 +21,7 @@ class AllLeague extends Component {
     return this.props.fetchingLeague ? (
       <>
         <Logo />
-        <div>loading</div>
+        <Loader />
       </>
     ) : this.props.allLeague === "" ? (
       <>
@@ -30,7 +31,7 @@ class AllLeague extends Component {
     ) : this.props.allLeague === null ? (
       <div>Sorry we dont have any data for this chosse other country</div>
     ) : (
-      <>
+      <div className="back">
         <Logo />
         <div className="LeagueHead">
           <p className="LeagueHead__sport">{this.props.sportName}</p>
@@ -47,7 +48,7 @@ class AllLeague extends Component {
             />
           ))}
         </div>
-      </>
+      </div>
     );
   }
 }

@@ -1,3 +1,9 @@
+.back {
+  min-width: 100vw;
+  min-height: 100vh;
+  background: #0f0c29;
+}
+
 .LeagueHead {
   padding: 20px 55px;
   padding-bottom: 0;
