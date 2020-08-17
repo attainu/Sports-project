@@ -7,23 +7,23 @@ import {
 } from "../actionTypes";
 
 const initialState = {
-  singleLegaue: "",
-  singleLegaueTeam: "",
-  singleLegaueLastEvent: "",
-  singleLegaueUpcomingEvent: "",
+  singleLeague: "",
+  singleLeagueTeam: "",
+  singleLeagueLastEvent: "",
+  singleLeagueUpcomingEvent: "",
   fetchingSingleLeague: false,
 };
 
 const singleLegaueReducer = (state = initialState, { type, data }) => {
   switch (type) {
     case SINGLE_LEAGUE:
-      return { ...state, singleLegaue: data };
+      return { ...state, singleLeague: data };
     case SINGLE_LEAGUE_TEAM:
-      return { ...state, singleLegaueTeam: data };
+      return { ...state, singleLeagueTeam: data };
     case SINGLE_LEAGUE_LAST_EVENT:
-      return { ...state, singleLegaueLastEvent: data };
+      return { ...state, singleLeagueLastEvent: data };
     case SINGLE_LEAGUE_UPCOMING_EVENT:
-      return { ...state, singleLegaueUpcomingEvent: data };
+      return { ...state, singleLeagueUpcomingEvent: data };
     case FETCH_SINGLE_LEAGUE:
       return { ...state, fetchingSingleLeague: !state.fetchingSingleLeague };
     default:
