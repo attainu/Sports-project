@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import "./TeamCard.css";
 import { withRouter } from "react-router-dom";
 class TeamCard extends Component {
-  // handelClick = () => {
-  //   this.props.history.push(`/singleTeam/${this.props.TeamID}`);
-  // };
+  handelClick = () => {
+    this.props.history.push(`/singleTeam/${this.props.teamID}`);
+  };
   render() {
     return (
-      <div className="TeamCard">
+      <div className="TeamCard" onClick={this.handelClick}>
         <div className="TeamImage">
           <img src={this.props.img} alt="" />
         </div>

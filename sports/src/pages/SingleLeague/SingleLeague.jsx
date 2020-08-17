@@ -6,6 +6,7 @@ import Default from "../../assets/img/default.jpg";
 import "./SingleLeague.css";
 import TeamCard from "../../components/TeamCard/TeamCard";
 import EventList from "../../components/EventList/EventList";
+import { Link } from "react-router-dom";
 class SingleLeague extends Component {
   componentDidMount() {
     this.props.getSingleLeague(this.props.match.params.leagueID);
@@ -35,6 +36,56 @@ class SingleLeague extends Component {
           }}
         >
           <Logo />
+          <div className="SocialIcon">
+            {this.props.singleLeague[0].strFacebook !== "" ? (
+              <a
+                href={`http://${this.props.singleLeague[0].strFacebook}`}
+                target="_blank"
+              >
+                <img
+                  src="https://www.thesportsdb.com/images/icons/facebook_128.png"
+                  alt=""
+                  className="SocialIcon__btn"
+                />
+              </a>
+            ) : null}
+            {this.props.singleLeague[0].strTwitter !== "" ? (
+              <a
+                href={`https://${this.props.singleLeague[0].strTwitter}`}
+                target="_blank"
+              >
+                <img
+                  src="https://www.thesportsdb.com/images/icons/twitter_128.png"
+                  alt=""
+                  className="SocialIcon__btn"
+                />
+              </a>
+            ) : null}
+            {this.props.singleLeague[0].strWebsite !== "" ? (
+              <a
+                href={`http://${this.props.singleLeague[0].strWebsite}`}
+                target="_blank"
+              >
+                <img
+                  src="https://www.thesportsdb.com/images/icons/webpage_128.png"
+                  alt=""
+                  className="SocialIcon__btn"
+                />
+              </a>
+            ) : null}
+            {this.props.singleLeague[0].strYoutube !== "" ? (
+              <a
+                href={`https://${this.props.singleLeague[0].strYoutube}`}
+                target="_blank"
+              >
+                <img
+                  src="https://www.thesportsdb.com/images/icons/youtube_128.png"
+                  alt=""
+                  className="SocialIcon__btn"
+                />
+              </a>
+            ) : null}
+          </div>
         </div>
         <div className="SLeague__Desc">
           <div className="SLeague__Desc--fd">
