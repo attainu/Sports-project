@@ -7,6 +7,8 @@ import SingleLeague from "./pages/SingleLeague/SingleLeague";
 import SingleTeam from "./pages/SingleTeam/SingleTeam";
 import "./App.css";
 import News from "./pages/News/News";
+import AboutUs from "./pages/AboutUs/AboutUs";
+import ContactUs from "./pages/ContactUs/ContactUs";
 
 class App extends Component {
   render() {
@@ -27,6 +29,8 @@ class App extends Component {
           />
           <Route exact path="/singleTeam/:teamID" component={SingleTeam} />
           <Route exact path="/news" component={News} />
+          <Route exact path="/aboutus" component={AboutUs} />
+          <Route exact path="/contactus" component={ContactUs} />
           <Redirect to="/" />
         </Switch>
       </>

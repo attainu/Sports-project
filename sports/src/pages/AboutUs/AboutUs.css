@@ -1,0 +1,33 @@
+.about {
+    color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-Items: center;
+    height: calc(100vh - 80px);
+    flex-Direction: column;
+    text-Align: left;
+    margin: 90px;
+}
+
+.about-this-website {
+    display: flex;
+    justify-Content: flex-start;
+    align-items: center;
+    /* flex-direction: column; */
+    flex-Direction: row;
+    text-Align: left;
+    margin: 10px;
+}
+
+.heading {
+    margin: 100px;
+    font-size: 50px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.all-about {
+    margin: 60px;
+    letter-spacing: 2px;
+    margin-left: -20px;
+}

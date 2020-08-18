@@ -4,6 +4,7 @@ import { API_KEY } from "../../config";
 const allSports = (data) => ({
   type: ALL_SPORTS,
   data,
+  
 });
 const fetchingAllSports = () => ({
   type: FETCHING_ALL_SPORTS,

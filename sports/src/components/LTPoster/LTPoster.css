@@ -14,11 +14,7 @@
   width: 100%;
   height: 350px;
   border-radius: 10px;
-  border: 2px solid #fff;
   transition: all 0.3s ease;
-}
-.LT__Desc--poster div img:hover {
-  border: 2px solid #8a00d8;
 }
 
 @media screen and (max-width: 550px) {
