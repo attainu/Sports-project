@@ -22,3 +22,7 @@ export const TEAM_DETAILS = "TEAM_DETAILS";
 export const TEAM_DETAILS_NEXT_EVENT = "TEAM_DETAILS_NEXT_EVENT";
 export const TEAM_DETAILS_LAST_EVENT = "TEAM_DETAILS_LAST_EVENT";
 export const FETCH_TEAM_DETAILS = "FETCH_TEAM_DETAILS";
+
+// get News Details
+export const NEWS = "NEWS";
+export const FETCHING_NEWS = "FETCHING_NEWS";

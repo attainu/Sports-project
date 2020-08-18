@@ -13,7 +13,7 @@ const LTHeader = ({ banner, fb, tw, web, yt }) => {
       <Logo />
       <div className="SocialIcon">
         {fb !== "" ? (
-          <a href={`http://${fb}`} target="_blank">
+          <a href={`http://${fb}`} target="_blank" rel="noopener noreferrer">
             <img
               src="https://www.thesportsdb.com/images/icons/facebook_128.png"
               alt=""
@@ -22,7 +22,7 @@ const LTHeader = ({ banner, fb, tw, web, yt }) => {
           </a>
         ) : null}
         {tw !== "" ? (
-          <a href={`https://${tw}`} target="_blank">
+          <a href={`https://${tw}`} target="_blank" rel="noopener noreferrer">
             <img
               src="https://www.thesportsdb.com/images/icons/twitter_128.png"
               alt=""
@@ -31,7 +31,7 @@ const LTHeader = ({ banner, fb, tw, web, yt }) => {
           </a>
         ) : null}
         {web !== "" ? (
-          <a href={`http://${web}`} target="_blank">
+          <a href={`http://${web}`} target="_blank" rel="noopener noreferrer">
             <img
               src="https://www.thesportsdb.com/images/icons/webpage_128.png"
               alt=""
@@ -40,7 +40,7 @@ const LTHeader = ({ banner, fb, tw, web, yt }) => {
           </a>
         ) : null}
         {yt !== "" ? (
-          <a href={`https://${yt}`} target="_blank">
+          <a href={`https://${yt}`} target="_blank" rel="noopener noreferrer">
             <img
               src="https://www.thesportsdb.com/images/icons/youtube_128.png"
               alt=""

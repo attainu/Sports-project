@@ -1,0 +1,12 @@
+.NewsCategory {
+  display: flex;
+  overflow: auto;
+  margin: 0px 51px;
+  align-items: center;
+}
+
+.NewsCard__Wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 45px;
+}

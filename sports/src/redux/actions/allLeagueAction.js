@@ -17,7 +17,6 @@ export const getAllLeague = (sport, country) => async (dispatch) => {
     const { data } = await axios.get(
       `${API_KEY}/search_all_leagues.php?c=${country}&s=${sport}`
     );
-    console.log(data.countrys);
     dispatch(setAllLeague(data.countrys));
   } catch (error) {
     alert(

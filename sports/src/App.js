@@ -6,6 +6,7 @@ import AllLeague from "./pages/League/AllLeague";
 import SingleLeague from "./pages/SingleLeague/SingleLeague";
 import SingleTeam from "./pages/SingleTeam/SingleTeam";
 import "./App.css";
+import News from "./pages/News/News";
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
             component={SingleLeague}
           />
           <Route exact path="/singleTeam/:teamID" component={SingleTeam} />
+          <Route exact path="/news" component={News} />
           <Redirect to="/" />
         </Switch>
       </>

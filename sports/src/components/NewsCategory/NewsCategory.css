@@ -1,0 +1,13 @@
+.NewsCategory__tab {
+  background: #8a00d8;
+  border: 2px solid #8a00d8;
+  margin: 10px;
+  padding: 10px 16px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.NewsCategory__tab:hover {
+  background: #fff;
+  color: #8a00d8;
+}
