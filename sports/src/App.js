@@ -9,13 +9,15 @@ import "./App.css";
 import News from "./pages/News/News";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import ContactUs from "./pages/ContactUs/ContactUs";
+import Index from "./pages/Index/Index";
 
 class App extends Component {
   render() {
     return (
       <>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Index} />
+          <Route exact path="/sports" component={Home} />
           <Route exact path="/country" component={Country} />
           <Route
             exact

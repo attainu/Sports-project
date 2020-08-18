@@ -27,9 +27,6 @@ const NewsCategory = () => {
       <div className="NewsCategory__tab" data-id="baseball">
         BASEBALL
       </div>
-      <div className="NewsCategory__tab" data-id="snooker">
-        SNOOKER
-      </div>
     </>
   );
 };

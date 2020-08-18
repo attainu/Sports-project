@@ -1,8 +1,8 @@
 import React from "react";
 import Logo from "../Logo/Logo";
-import "./NewsHeader.css";
+import "./SportsHeader.css";
 import { Link } from "react-router-dom";
-const NewsHeader = () => {
+const SportsHeader = () => {
   return (
     <div className="Header">
       <Logo />
@@ -14,4 +14,4 @@ const NewsHeader = () => {
   );
 };
 
-export default NewsHeader;
+export default SportsHeader;

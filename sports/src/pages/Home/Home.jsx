@@ -29,6 +29,18 @@ class Home extends Component {
       </>
     ) : (
       <>
+        <div
+          style={{
+            position: "fixed",
+            zIndex: "100",
+            top: "0",
+            left: "50%",
+            transform: "translate(-50%,-25%)",
+          }}
+        >
+          <Logo />
+        </div>
+
         <div className="Home_Wrapper" onClick={this.setSport}>
           {this.props.allSports.map((item) => (
             <SportCard data={item} key={item.idSport} />

@@ -37,9 +37,9 @@ class Country extends Component {
           }}
         >
           <p>
-            Sorry you can't access this page directly.
+            Sorry you can't access this page directly.Either go back or
             <Link
-              to="/"
+              to="/sports"
               style={{
                 background: "#fff",
                 padding: "5px 10px",
@@ -47,6 +47,7 @@ class Country extends Component {
                 borderRadius: "5px",
                 cursor: "pointer",
                 lineHeight: "3",
+                whiteSpace: "pre",
               }}
             >
               GO TO HOME
@@ -54,7 +55,7 @@ class Country extends Component {
           </p>
           <img
             src={Error}
-            style={{ width: "250px", paddingTop: "40px" }}
+            style={{ width: "250px", paddingTop: "20px" }}
             alt=""
           />
         </div>

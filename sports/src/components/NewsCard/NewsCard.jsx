@@ -1,15 +1,18 @@
 import React from "react";
 import "./NewsCard.css";
+import Default from "../../assets/img/default.jpg";
 const NewsCard = ({ image, tag, title, author, date, readMore }) => {
   return (
     <div className="NewsCard">
       <div>
         <div className="NewsCard__img">
-          <img src={image} alt="" />
+          <img src={image || Default} alt="" />
           <div className="NewsCard__img--tag">{tag || "NA"}</div>
         </div>
         <div className="NewsCard__body">
-          <p className="NewsCard__body--date">{date}</p>
+          <p className="NewsCard__body--date">
+            {date.split("-").reverse().join("-")}
+          </p>
           <p className="NewsCard__body--author">{author || "Lakshay Saini"}</p>
           <p className="NewsCard__body--title">{title || "NA"}</p>
         </div>
