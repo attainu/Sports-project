@@ -70,3 +70,72 @@
     font-weight: 400;
     text-align: center;
 }
+
+@media screen and (max-width: 900px) {
+    .contact {
+        display: flex;
+        align-items: center;
+        width: 88%;
+    }
+
+    .info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin-top: 50px;
+    }
+
+    .Contact-us {
+        margin-top: 30px;
+        font-size: 40px;
+        font-weight: 400;
+    }
+
+    .profile-card {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .contact {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: 95%;
+    }
+
+    .info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 150px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .contact {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: 75%;
+    }
+
+    .info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 150px;
+    }
+
+    .Contact-us {
+        margin-top: 30px;
+        font-size: 40px;
+        font-weight: 400;
+    }
+
+    .profile-card {
+        width: 300px;
+    }
+}
