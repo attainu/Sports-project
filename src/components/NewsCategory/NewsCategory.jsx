@@ -3,29 +3,23 @@ import "./NewsCategory.css";
 const NewsCategory = () => {
   return (
     <>
-      <div className="NewsCategory__tab" data-id="sport">
-        ALL
+      <div className="NewsCategory__tab" data-id="sports">
+        SPORTS
       </div>
-      <div className="NewsCategory__tab" data-id="cricket">
-        CRICKET
+      <div className="NewsCategory__tab" data-id="technology">
+        TECHNOLOGY
       </div>
-      <div className="NewsCategory__tab" data-id="football">
-        FOOTBALL
+      <div className="NewsCategory__tab" data-id="science">
+        SCIENCE
       </div>
-      <div className="NewsCategory__tab" data-id="tennis">
-        TENNIS
+      <div className="NewsCategory__tab" data-id="health">
+        HEALTH
       </div>
-      <div className="NewsCategory__tab" data-id="basketball">
-        BASKETBALL
+      <div className="NewsCategory__tab" data-id="entertainment">
+        ENTERTAINMENT
       </div>
-      <div className="NewsCategory__tab" data-id="hockey">
-        HOCKEY
-      </div>
-      <div className="NewsCategory__tab" data-id="volleyball">
-        VOLLEYBALL
-      </div>
-      <div className="NewsCategory__tab" data-id="baseball">
-        BASEBALL
+      <div className="NewsCategory__tab" data-id="general">
+        GENERAL
       </div>
     </>
   );
