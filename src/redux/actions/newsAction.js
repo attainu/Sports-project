@@ -1,6 +1,6 @@
 import { NEWS, FETCHING_NEWS } from "../actionTypes";
 import axios from "axios";
-import { NEWS_BASE_URL, NEWS_API_KEY } from "../../config";
+// import { NEWS_BASE_URL, NEWS_API_KEY } from "../../config";
 export const setNews = (data) => ({
   type: NEWS,
   data,
@@ -9,12 +9,12 @@ export const setNews = (data) => ({
 const fetchingNews = () => ({
   type: FETCHING_NEWS,
 });
-const CORS = "https://corsanywhere.herokuapp.com/";
+
 export const getNews = (query = "sport") => async (dispatch) => {
   try {
     dispatch(fetchingNews());
     const { data } = await axios.get(
-      `${CORS}${NEWS_BASE_URL}?q=${query}&apiKey=${NEWS_API_KEY}`
+      `https://saurav.tech/NewsAPI/top-headlines/category/sports/in.json`
     );
     dispatch(setNews(data.articles));
   } catch (error) {
