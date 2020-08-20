@@ -9,12 +9,12 @@ export const setNews = (data) => ({
 const fetchingNews = () => ({
   type: FETCHING_NEWS,
 });
-
+const CORS = "https://corsanywhere.herokuapp.com/";
 export const getNews = (query = "sport") => async (dispatch) => {
   try {
     dispatch(fetchingNews());
     const { data } = await axios.get(
-      `${NEWS_BASE_URL}?q=${query}&apiKey=${NEWS_API_KEY}`
+      `${CORS}${NEWS_BASE_URL}?q=${query}&apiKey=${NEWS_API_KEY}`
     );
     dispatch(setNews(data.articles));
   } catch (error) {
