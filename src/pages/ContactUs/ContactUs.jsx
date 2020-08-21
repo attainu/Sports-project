@@ -33,7 +33,7 @@ class ContactUs extends Component {
                 alt="Akshat"
                 className="akshat-img"
               />
-              <h3 className="profile-name">Lakshay Saini</h3>
+              <h3 className="profile-name">Akshat Austin</h3>
               <p className="information">Frontend Developer</p>
               <a href="https://www.linkedin.com/in/akshat-austin/">
                 <img
